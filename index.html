@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComproTuCocheAlMejorPrecio | Vende tu coche al mejor precio garantizado</title>
+  <meta name="description" content="Vende tu coche usado al mejor precio garantizado. Tasación online gratuita, pago inmediato y gestión de trámites sin coste adicional en toda España.">
+  <meta name="keywords" content="compra coches usados, venta coches segunda mano, tasación online coche, mejor precio coche usado, vender mi coche rápido, compraventa vehículos">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+      --primary: 221 83% 53%;
+      --primary-foreground: 210 20% 98%;
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --accent: 240 4.8% 95.9%;
+      --accent-foreground: 240 5.9% 10%;
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 221 83% 53%;
+      --radius: 0.5rem;
+      
+      --blue-50: #eff6ff;
+      --blue-100: #dbeafe;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --blue-800: #1e40af;
+      --green-500: #22c55e;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: hsl(var(--foreground));
+      background-color: hsl(var(--background));
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue-600);
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--blue-600);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--blue-700);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--gray-50);
+    }
+
+    .btn-lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--gray-700);
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--blue-600);
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .hero-form {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 6px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transform: translateY(0);
+      transition: transform 0.3s;
+    }
+
+    .hero-form:hover {
+      transform: translateY(-5px);
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      background-color: white;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1.5em 1.5em;
+    }
+
+    .form-select:focus {
+      outline: none;
+      border-color: var(--blue-600);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    .benefits {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 3rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--blue-600);
+      font-size: 2.5rem;
+    }
+
+    .benefit-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .benefit-description {
+      color: var(--gray-600);
+    }
+
+    .how-it-works {
+      padding: 4rem 0;
+      background-color: var(--gray-50);
+    }
+
+    .steps {
+      position: relative;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .steps-line {
+      display: none;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      background-color: var(--blue-600);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 auto 1.5rem;
+    }
+
+    .step-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-description {
+      color: var(--gray-600);
+    }
+
+    .cta-button {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .car-valuator {
+      padding: 4rem 0;
+      background-color: var(--gray-50);
+    }
+
+    .valuator-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .progress-indicator {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-indicator.active {
+      background-color: var(--blue-600);
+      color: white;
+    }
+
+    .progress-indicator.completed {
+      background-color: var(--green-500);
+      color: white;
+    }
+
+    .progress-indicator.pending {
+      background-color: var(--gray-200);
+      color: var(--gray-600);
+    }
+
+    .progress-label {
+      font-size: 0.875rem;
+      display: none;
+    }
+
+    .progress-bar-container {
+      position: relative;
+      height: 0.25rem;
+      background-color: var(--gray-200);
+      border-radius: 9999px;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--blue-600);
+      border-radius: 9999px;
+      transition: width 0.3s;
+    }
+
+    .step-content {
+      min-height: 25rem;
+    }
+
+    .step-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 1.5rem;
+    }
+
+    .car-selector {
+      padding: 5rem 0;
+      background-color: white;
+    }
+
+    .selector-card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .selector-header {
+      background-color: var(--blue-600);
+      padding: 1.5rem;
+      color: white;
+    }
+
+    .selector-header-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .selector-body {
+      padding: 1.5rem;
+      min-height: 25rem;
+    }
+
+    .selector-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--gray-100);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .selector-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .selector-item {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 2px solid var(--gray-100);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .selector-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .selector-item.selected {
+      border-color: var(--blue-600);
+      background-color: var(--blue-50);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.1);
+    }
+
+    .selector-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .selector-item-title {
+      font-weight: 500;
+    }
+
+    .selector-check {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 9999px;
+      background-color: var(--blue-600);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .selector-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .financing-calculator {
+      padding: 5rem 0;
+      background-color: var(--gray-50);
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+
+    .calculator-form {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .calculator-header {
+      background-color: var(--blue-600);
+      padding: 1.5rem;
+      color: white;
+    }
+
+    .calculator-header-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .calculator-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .slider-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .slider-value {
+      background-color: var(--blue-50);
+      color: var(--blue-700);
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 0.5rem;
+      border-radius: 0.25rem;
+      background: var(--gray-200);
+      outline: none;
+      margin: 1rem 0;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: var(--blue-600);
+      border: 2px solid white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .slider::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+    }
+
+    .slider-range {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .calculator-results {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .results-header {
+      background-color: var(--blue-600);
+      padding: 1.5rem;
+      color: white;
+    }
+
+    .results-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .monthly-payment {
+      text-align: center;
+    }
+
+    .monthly-payment-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .monthly-payment-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      margin-top: 0.5rem;
+    }
+
+    .loan-summary {
+      background-color: var(--blue-50);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-label {
+      color: var(--gray-600);
+    }
+
+    .summary-value {
+      font-weight: 500;
+    }
+
+    .summary-divider {
+      border-top: 1px solid var(--blue-100);
+      margin: 1rem 0;
+    }
+
+    .calculator-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .testimonials {
+      padding: 4rem 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .testimonial-quote {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2.5rem;
+      font-family: serif;
+      color: var(--blue-600);
+      opacity: 0.2;
+    }
+
+    .testimonial-text {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--gray-600);
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-right: 1rem;
+      background-color: var(--gray-200);
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-info h4 {
+      font-weight: 600;
+    }
+
+    .testimonial-location {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .testimonial-rating {
+      display: flex;
+      margin-top: 0.25rem;
+    }
+
+    .star {
+      color: #f59e0b;
+      font-size: 1rem;
+    }
+
+    .ai-assistant {
+      padding: 5rem 0;
+      background-color: var(--gray-50);
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .ai-features {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .ai-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .ai-feature-icon {
+      background-color: var(--blue-100);
+      color: var(--blue-600);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ai-feature-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ai-feature-content p {
+      color: var(--gray-600);
+    }
+
+    .ai-chat {
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .ai-chat-header {
+      background-color: var(--blue-600);
+      padding: 1rem;
+      color: white;
+    }
+
+    .ai-chat-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .ai-chat-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .ai-chat-messages {
+      height: 350px;
+      padding: 1rem;
+      overflow-y: auto;
+      background-color: var(--gray-50);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .chat-message {
+      max-width: 80%;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    .chat-message.bot {
+      align-self: flex-start;
+      background-color: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-message.user {
+      align-self: flex-end;
+      background-color: var(--blue-600);
+      color: white;
+    }
+
+    .chat-message-time {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+
+    .ai-chat-input {
+      padding: 1rem;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .contact {
+      padding: 4rem 0;
+      background-color: var(--gray-50);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      background-color: var(--blue-100);
+      color: var(--blue-600);
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-content h4 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-content p {
+      color: var(--gray-600);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-link {
+      background-color: var(--blue-100);
+      color: var(--blue-600);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      background-color: var(--blue-200);
+    }
+
+    .contact-form {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+
+    .contact-form h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer {
+      background-color: var(--gray-900);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--blue-400);
+    }
+
+    .footer-brand p {
+      color: var(--gray-400);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h4 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-link-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-link {
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--gray-800);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+    }
+
+    .chatbot-button {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 50;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 9999px;
+      background-color: var(--blue-600);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s;
+    }
+
+    .chatbot-button:hover {
+      background-color: var(--blue-700);
+      box-shadow: 0 15px 20px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .chatbot-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .chatbot-modal.active {
+      display: flex;
+    }
+
+    .chatbot-container {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 32rem;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chatbot-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .chatbot-close:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+
+    /* Responsive styles */
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+      }
+
+      .progress-label {
+        display: block;
+      }
+
+      .form-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+
+      .nav {
+        display: block;
+      }
+
+      .hero-text {
+        text-align: left;
+      }
+
+      .hero-buttons {
+        justify-content: flex-start;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2.25rem;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .steps-line {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: calc(12.5% + 1rem);
+        right: calc(12.5% + 1rem);
+        height: 0.125rem;
+        background-color: var(--blue-600);
+      }
+
+      .selector-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .calculator-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ai-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Animation classes */
+    .fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">ComproTuCoche</a>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#inicio" class="nav-link">Inicio</a></li>
+            <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+            <li><a href="#como-funciona" class="nav-link">Cómo Funciona</a></li>
+            <li><a href="#tasacion" class="nav-link">Tasación</a></li>
+            <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+            <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+        
+        <button class="btn btn-primary">Tasar mi coche</button>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <ul class="mobile-nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+          <li><a href="#como-funciona" class="nav-link">Cómo Funciona</a></li>
+          <li><a href="#tasacion" class="nav-link">Tasación</a></li>
+          <li><a href="#opiniones" class="nav-link">Opiniones</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li><button class="btn btn-primary btn-full">Tasar mi coche</button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Vende tu coche al mejor precio garantizado</h1>
+          <p class="hero-description">
+            Te ofrecemos la valoración más competitiva del mercado por tu vehículo usado. Proceso rápido, seguro y sin complicaciones. Recibe el pago en menos de 24 horas.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary btn-lg">Tasar mi coche ahora</button>
+            <button class="btn btn-outline btn-lg">¿Cómo funciona?</button>
+          </div>
+        </div>
+        
+        <div class="hero-form">
+          <h2 class="form-title">Tasación Rápida</h2>
+          <form>
+            <div class="form-group">
+              <label for="brand" class="form-label">Marca</label>
+              <select id="brand" class="form-select">
+                <option value="" selected disabled>Selecciona marca</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes-Benz</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Renault">Renault</option>
+                <option value="Seat">SEAT</option>
+                <option value="Ford">Ford</option>
+                <option value="Opel">Opel</option>
+                <option value="Peugeot">Peugeot</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="model" class="form-label">Modelo</label>
+              <select id="model" class="form-select">
+                <option value="" selected disabled>Selecciona modelo</option>
+                <!-- Models will be populated via JavaScript -->
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="year" class="form-label">Año</label>
+              <select id="year" class="form-select">
+                <option value="" selected disabled>Selecciona año</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="older">Anterior a 2013</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="kilometers" class="form-label">Kilometraje</label>
+              <input type="number" id="kilometers" class="form-control" placeholder="Ej: 120000" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Teléfono</label>
+              <input type="tel" id="phone" class="form-control" placeholder="Ej: 600123456" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">Solicitar tasación</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <p class="section-description">Descubre las ventajas de vender tu coche con nosotros</p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 class="benefit-title">Mejor precio garantizado</h3>
+          <p class="benefit-description">Ofrecemos hasta un 10% más que nuestra competencia. Si encuentras una oferta mejor, la igualamos y mejoramos.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="benefit-title">Proceso rápido y eficiente</h3>
+          <p class="benefit-description">Tasación en menos de 2 horas y pago inmediato en el momento de la firma. Sin esperas ni complicaciones.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3 class="benefit-title">Gestión de trámites gratuita</h3>
+          <p class="benefit-description">Nos encargamos de toda la documentación y trámites administrativos sin coste adicional para ti.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="benefit-title">Seguridad y transparencia</h3>
+          <p class="benefit-description">Proceso 100% legal y transparente. Somos una empresa con más de 15 años de experiencia en el sector.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3 class="benefit-title">Pago inmediato</h3>
+          <p class="benefit-description">Recibe el pago en el momento mediante transferencia bancaria o cheque bancario, según tu preferencia.</p>
+        </div>
+        
+        <div class="benefit-card fade-in">
+          <div class="benefit-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="benefit-title">Servicio en toda Asturias</h3>
+          <p class="benefit-description">Nos desplazamos a cualquier punto de Asturias para evaluar tu vehículo sin coste adicional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Cómo funciona?</h2>
+        <p class="section-description">Vender tu coche nunca fue tan fácil</p>
+      </div>
+      
+      <div class="steps">
+        <div class="steps-line"></div>
+        
+        <div class="steps-grid">
+          <div class="step fade-in">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Solicita tasación</h3>
+            <p class="step-description">Completa el formulario con los datos de tu vehículo para recibir una valoración inicial sin compromiso.</p>
+          </div>
+          
+          <div class="step fade-in">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Peritación gratuita</h3>
+            <p class="step-description">Nuestros técnicos realizarán una inspección detallada de tu vehículo para confirmar su estado.</p>
+          </div>
+          
+          <div class="step fade-in">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Oferta definitiva</h3>
+            <p class="step-description">Recibirás una oferta final basada en el estado real del vehículo, siempre buscando el mejor precio para ti.</p>
+          </div>
+          
+          <div class="step fade-in">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Pago inmediato</h3>
+            <p class="step-description">Si aceptas la oferta, recibirás el pago en el momento mediante transferencia bancaria o cheque bancario.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-button">
+        <button class="btn btn-primary btn-lg">Comenzar ahora</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Car Selector Section -->
+  <section class="car-selector" id="tasacion-avanzada">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Selector Avanzado de Vehículos</h2>
+        <p class="section-description">Encuentra el valor exacto de tu coche en pocos pasos</p>
+      </div>
+      
+      <div class="progress-steps">
+        <div class="progress-step">
+          <div class="progress-indicator active">1</div>
+          <span class="progress-label">Marca</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-indicator pending">2</div>
+          <span class="progress-label">Modelo</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-indicator pending">3</div>
+          <span class="progress-label">Año</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-indicator pending">4</div>
+          <span class="progress-label">Estado</span>
+        </div>
+        <div class="progress-step">
+          <div class="progress-indicator pending">5</div>
+          <span class="progress-label">Contacto</span>
+        </div>
+      </div>
+      
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 0%"></div>
+      </div>
+      
+      <div class="selector-card">
+        <div class="selector-header">
+          <div class="selector-header-content">
+            <i class="fas fa-car"></i>
+            <h3>Selecciona la marca de tu vehículo</h3>
+          </div>
+        </div>
+        
+        <div class="selector-body">
+          <p class="mb-6 text-foreground/70">Selecciona la marca de tu vehículo para comenzar la tasación</p>
+          
+          <div class="selector-grid" id="brandSelector">
+            <div class="selector-item" data-brand="Audi">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Audi</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="BMW">
+              <div class="selector-item-header">
+                <span class="selector-item-title">BMW</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Mercedes">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Mercedes-Benz</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Volkswagen">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Volkswagen</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Toyota">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Toyota</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Renault">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Renault</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Seat">
+              <div class="selector-item-header">
+                <span class="selector-item-title">SEAT</span>
+              </div>
+            </div>
+            <div class="selector-item" data-brand="Ford">
+              <div class="selector-item-header">
+                <span class="selector-item-title">Ford</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="selector-footer">
+          <div></div>
+          <button class="btn btn-primary" id="nextStep" disabled>Siguiente</button>
+        </div>
+      </div>
+      
+      <div class="selector-note">
+        <i class="fas fa-info-circle"></i>
+        <p>Esta herramienta proporciona una estimación inicial. Para una tasación precisa, uno de nuestros especialistas evaluará personalmente tu vehículo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing Calculator Section -->
+  <section class="financing-calculator">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Calculadora de Financiación</h2>
+        <p class="section-description">Calcula tu cuota mensual y planifica la compra de tu próximo vehículo</p>
+      </div>
+      
+      <div class="calculator-grid">
+        <div class="calculator-form">
+          <div class="calculator-header">
+            <div class="calculator-header-content">
+              <i class="fas fa-calculator"></i>
+              <h3>Calcula tu financiación</h3>
+            </div>
+          </div>
+          
+          <div class="calculator-body">
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="car-value" class="slider-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  Valor del vehículo
+                </label>
+                <div class="slider-value">15.000 €</div>
+              </div>
+              
+              <input type="range" id="car-value" class="slider" min="1000" max="50000" step="500" value="15000">
+              
+              <div class="slider-range">
+                <span>1.000 €</span>
+                <span>50.000 €</span>
+              </div>
+            </div>
+            
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="down-payment" class="slider-label">
+                  <i class="fas fa-dollar-sign"></i>
+                  Entrada inicial
+                </label>
+                <div class="slider-value">3.000 €</div>
+              </div>
+              
+              <input type="range" id="down-payment" class="slider" min="0" max="7500" step="500" value="3000">
+              
+              <div class="slider-range">
+                <span>0 €</span>
+                <span>7.500 €</span>
+              </div>
+            </div>
+            
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="interest-rate" class="slider-label">
+                  <i class="fas fa-percentage"></i>
+                  Tipo de interés
+                </label>
+                <div class="slider-value">5.9%</div>
+              </div>
+              
+              <input type="range" id="interest-rate" class="slider" min="1" max="15" step="0.1" value="5.9">
+              
+              <div class="slider-range">
+                <span>1%</span>
+                <span>15%</span>
+              </div>
+            </div>
+            
+            <div class="slider-group">
+              <div class="slider-header">
+                <label for="loan-term" class="slider-label">
+                  <i class="fas fa-calendar"></i>
+                  Plazo (meses)
+                </label>
+                <div class="slider-value">60 meses</div>
+              </div>
+              
+              <input type="range" id="loan-term" class="slider" min="12" max="84" step="12" value="60">
+              
+              <div class="slider-range">
+                <span>12 meses</span>
+                <span>84 meses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calculator-results">
+          <div class="results-header">
+            <h3>Resumen de financiación</h3>
+          </div>
+          
+          <div class="results-body">
+            <div class="monthly-payment">
+              <p class="monthly-payment-label">Tu cuota mensual estimada</p>
+              <h4 class="monthly-payment-value">230,87 €</h4>
+            </div>
+            
+            <div class="loan-summary">
+              <div class="summary-item">
+                <span class="summary-label">Importe del préstamo:</span>
+                <span class="summary-value">12.000 €</span>
+              </div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Entrada inicial:</span>
+                <span class="summary-value">3.000 €</span>
+              </div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Tipo de interés:</span>
+                <span class="summary-value">5.9%</span>
+              </div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Plazo del préstamo:</span>
+                <span class="summary-value">60 meses</span>
+              </div>
+              
+              <div class="summary-divider"></div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Interés total:</span>
+                <span class="summary-value">1.852,20 €</span>
+              </div>
+              
+              <div class="summary-item">
+                <span class="summary-label">Coste total:</span>
+                <span class="summary-value">13.852,20 €</span>
+              </div>
+            </div>
+            
+            <div class="calculator-buttons">
+              <button class="btn btn-primary btn-full">Solicitar financiación</button>
+              <button class="btn btn-outline btn-full">Hablar con un asesor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-description">Estamos a tu disposición para resolver cualquier duda</p>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="text-2xl font-semibold mb-6">Información de contacto</h3>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-content">
+              <h4>Oficina central</h4>
+              <p>
+                Avenida de la Innovación, 25<br>
+                33011 Oviedo, Asturias
+              </p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-content">
+              <h4>Teléfono</h4>
+              <p>984 263 220</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-content">
+              <h4>Email</h4>
+              <p>info@comprotucochealmejorprecio.net</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-content">
+              <h4>Horario</h4>
+              <p>
+                Lunes a Viernes: 9:00 - 20:00<br>
+                Sábados: 10:00 - 14:00
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold mb-3">Síguenos</h4>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3>Envíanos un mensaje</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nombre completo*</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Ej: Juan Pérez García" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email*</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="Ej: juan@ejemplo.com" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-phone" class="form-label">Teléfono*</label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="Ej: 600123456" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Asunto*</label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="Ej: Consulta sobre tasación" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Mensaje*</label>
+              <textarea id="contact-message" class="form-control" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>ComproTuCoche</h3>
+          <p>Somos especialistas en la compra de vehículos usados, ofreciendo el mejor precio del mercado y un servicio integral de gestión de trámites.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Enlaces rápidos</h4>
+          <ul class="footer-link-list">
+            <li><a href="#inicio" class="footer-link">Inicio</a></li>
+            <li><a href="#beneficios" class="footer-link">Beneficios</a></li>
+            <li><a href="#como-funciona" class="footer-link">Cómo funciona</a></li>
+            <li><a href="#tasacion" class="footer-link">Tasación</a></li>
+            <li><a href="#opiniones" class="footer-link">Opiniones</a></li>
+            <li><a href="#contacto" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <ul class="footer-link-list">
+            <li><a href="#" class="footer-link">Tasación de vehículos</a></li>
+            <li><a href="#" class="footer-link">Compra inmediata</a></li>
+            <li><a href="#" class="footer-link">Gestión de trámites</a></li>
+            <li><a href="#" class="footer-link">Recogida a domicilio</a></li>
+            <li><a href="#" class="footer-link">Cancelación de cargas</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul class="footer-link-list">
+            <li><a href="#" class="footer-link">Aviso legal</a></li>
+            <li><a href="#" class="footer-link">Política de privacidad</a></li>
+            <li><a href="#" class="footer-link">Política de cookies</a></li>
+            <li><a href="#" class="footer-link">Términos y condiciones</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2023</span> Comprotucochealmejorprecio.net - Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Button -->
+  <div class="chatbot-button" id="chatbotButton">
+    <i class="fas fa-comment"></i>
+  </div>
+
+  <!-- Chatbot Modal -->
+  <div class="chatbot-modal" id="chatbotModal">
+    <div class="chatbot-container">
+      <div class="chatbot-close" id="chatbotClose">
+        <i class="fas fa-times"></i>
+      </div>
+      
+      <div class="ai-chat-header">
+        <h3 class="ai-chat-title">Asistente Virtual</h3>
+        <p class="ai-chat-subtitle">Estoy aquí para ayudarte con la venta de tu coche</p>
+      </div>
+      
+      <div class="ai-chat-messages">
+        <div class="chat-message bot">
+          <p>¡Hola! Soy el asistente virtual de ComproTuCocheAlMejorPrecio. ¿En qué puedo ayudarte hoy?</p>
+          <div class="chat-message-time">12:00</div>
+        </div>
+      </div>
+      
+      <div class="ai-chat-input">
+        <input type="text" class="form-control" placeholder="Escribe tu mensaje..." id="chatInput">
+        <button class="btn btn-primary" id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mobileMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Car models data
+    const carModels = {
+      'Audi': ['A1', 'A3', 'A4', 'A5', 'A6', 'Q3', 'Q5', 'Q7'],
+      'BMW': ['Serie 1', 'Serie 3', 'Serie 5', 'X1', 'X3', 'X5'],
+      'Mercedes': ['Clase A', 'Clase C', 'Clase E', 'GLA', 'GLC', 'GLE'],
+      'Volkswagen': ['Golf', 'Polo', 'Passat', 'Tiguan', 'T-Roc', 'T-Cross'],
+      'Toyota': ['Yaris', 'Corolla', 'RAV4', 'C-HR', 'Prius', 'Land Cruiser'],
+      'Renault': ['Clio', 'Megane', 'Captur', 'Kadjar', 'Scenic', 'Arkana'],
+      'Seat': ['Ibiza', 'Leon', 'Arona', 'Ateca', 'Tarraco', 'Alhambra'],
+      'Ford': ['Fiesta', 'Focus', 'Kuga', 'Puma', 'Mondeo', 'Ecosport']
+    };
+    
+    // Populate models based on brand selection
+    const brandSelect = document.getElementById('brand');
+    const modelSelect = document.getElementById('model');
+    
+    if (brandSelect && modelSelect) {
+      brandSelect.addEventListener('change', () => {
+        const brand = brandSelect.value;
+        const models = carModels[brand] || [];
+        
+        // Clear existing options
+        modelSelect.innerHTML = '<option value="" selected disabled>Selecciona modelo</option>';
+        
+        // Add new options
+        models.forEach(model => {
+          const option = document.createElement('option');
+          option.value = model;
+          option.textContent = model;
+          modelSelect.appendChild(option);
+        });
+      });
+    }
+    
+    // Advanced car selector
+    const selectorItems = document.querySelectorAll('.selector-item');
+    const nextStepBtn = document.getElementById('nextStep');
+    
+    if (selectorItems.length && nextStepBtn) {
+      selectorItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // Remove selected class from all items
+          selectorItems.forEach(i => i.classList.remove('selected'));
+          
+          // Add selected class to clicked item
+          item.classList.add('selected');
+          
+          // Add check icon if not exists
+          if (!item.querySelector('.selector-check')) {
+            const check = document.createElement('div');
+            check.className = 'selector-check';
+            check.innerHTML = '<i class="fas fa-check"></i>';
+            item.querySelector('.selector-item-header').appendChild(check);
+          }
+          
+          // Enable next button
+          nextStepBtn.disabled = false;
+        });
+      });
+    }
+    
+    // Financing calculator
+    const carValueInput = document.getElementById('car-value');
+    const carValueDisplay = document.querySelector('.slider-value');
+    const downPaymentInput = document.getElementById('down-payment');
+    const downPaymentDisplay = document.querySelectorAll('.slider-value')[1];
+    const interestRateInput = document.getElementById('interest-rate');
+    const interestRateDisplay = document.querySelectorAll('.slider-value')[2];
+    const loanTermInput = document.getElementById('loan-term');
+    const loanTermDisplay = document.querySelectorAll('.slider-value')[3];
+    const monthlyPaymentDisplay = document.querySelector('.monthly-payment-value');
+    
+    // Function to calculate monthly payment
+    function calculateMonthlyPayment() {
+      const principal = carValueInput.value - downPaymentInput.value;
+      const interestRate = interestRateInput.value / 100 / 12;
+      const loanTerm = loanTermInput.value;
+      
+      let monthlyPayment = 0;
+      
+      if (principal > 0 && interestRate > 0 && loanTerm > 0) {
+        const x = Math.pow(1 + interestRate, loanTerm);
+        monthlyPayment = (principal * x * interestRate) / (x - 1);
+      } else {
+        monthlyPayment = principal / loanTerm || 0;
+      }
+      
+      return monthlyPayment.toFixed(2);
+    }
+    
+    // Function to update calculator displays
+    function updateCalculator() {
+      if (carValueInput && carValueDisplay) {
+        carValueDisplay.textContent = Number(carValueInput.value).toLocaleString('es-ES') + ' €';
+        
+        // Update max down payment (50% of car value)
+        if (downPaymentInput) {
+          downPaymentInput.max = carValueInput.value * 0.5;
+          if (downPaymentInput.value > downPaymentInput.max) {
+            downPaymentInput.value = downPaymentInput.max;
+          }
+        }
+      }
+      
+      if (downPaymentInput && downPaymentDisplay) {
+        downPaymentDisplay.textContent = Number(downPaymentInput.value).toLocaleString('es-ES') + ' €';
+      }
+      
+      if (interestRateInput && interestRateDisplay) {
+        interestRateDisplay.textContent = interestRateInput.value + '%';
+      }
+      
+      if (loanTermInput && loanTermDisplay) {
+        loanTermDisplay.textContent = loanTermInput.value + ' meses';
+      }
+      
+      if (monthlyPaymentDisplay) {
+        monthlyPaymentDisplay.textContent = Number(calculateMonthlyPayment()).toLocaleString('es-ES') + ' €';
+      }
+      
+      // Update loan summary
+      const loanAmount = document.querySelectorAll('.summary-value')[0];
+      const downPayment = document.querySelectorAll('.summary-value')[1];
+      const interestRate = document.querySelectorAll('.summary-value')[2];
+      const loanTerm = document.querySelectorAll('.summary-value')[3];
+      const totalInterest = document.querySelectorAll('.summary-value')[4];
+      const totalCost = document.querySelectorAll('.summary-value')[5];
+      
+      if (loanAmount && downPayment && interestRate && loanTerm && totalInterest && totalCost) {
+        const principal = carValueInput.value - downPaymentInput.value;
+        const monthlyPayment = calculateMonthlyPayment();
+        const interest = (monthlyPayment * loanTermInput.value) - principal;
+        
+        loanAmount.textContent = Number(principal).toLocaleString('es-ES') + ' €';
+        downPayment.textContent = Number(downPaymentInput.value).toLocaleString('es-ES') + ' €';
+        interestRate.textContent = interestRateInput.value + '%';
+        loanTerm.textContent = loanTermInput.value + ' meses';
+        totalInterest.textContent = Number(interest).toLocaleString('es-ES', { maximumFractionDigits: 2 }) + ' €';
+        totalCost.textContent = Number(Number(principal) + Number(interest)).toLocaleString('es-ES', { maximumFractionDigits: 2 }) + ' €';
+      }
+    }
+    
+    // Add event listeners to calculator inputs
+    if (carValueInput) carValueInput.addEventListener('input', updateCalculator);
+    if (downPaymentInput) downPaymentInput.addEventListener('input', updateCalculator);
+    if (interestRateInput) interestRateInput.addEventListener('input', updateCalculator);
+    if (loanTermInput) loanTermInput.addEventListener('input', updateCalculator);
+    
+    // Initialize calculator
+    updateCalculator();
+    
+    // Chatbot functionality
+    const chatbotButton = document.getElementById('chatbotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatInput = document.getElementById('chatInput');
+    const sendMessageBtn = document.getElementById('sendMessage');
+    const chatMessages = document.querySelector('.ai-chat-messages');
+    
+    // Toggle chatbot modal
+    if (chatbotButton && chatbotModal && chatbotClose) {
+      chatbotButton.addEventListener('click', () => {
+        chatbotModal.classList.add('active');
+      });
+      
+      chatbotClose.addEventListener('click', () => {
+        chatbotModal.classList.remove('active');
+      });
+      
+      // Close modal when clicking outside
+      chatbotModal.addEventListener('click', (e) => {
+        if (e.target === chatbotModal) {
+          chatbotModal.classList.remove('active');
+        }
+      });
+    }
+    
+    // Send message functionality
+    function sendMessage() {
+      if (!chatInput.value.trim()) return;
+      
+      const userMessage = chatInput.value;
+      
+      // Add user message to chat
+      const userMessageElement = document.createElement('div');
+      userMessageElement.className = 'chat-message user';
+      userMessageElement.innerHTML = `
+        <p>${userMessage}</p>
+        <div class="chat-message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+      `;
+      chatMessages.appendChild(userMessageElement);
+      
+      // Clear input
+      chatInput.value = '';
+      
+      // Scroll to bottom
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      
+      // Simulate bot typing
+      setTimeout(() => {
+        const botTypingElement = document.createElement('div');
+        botTypingElement.className = 'chat-message bot';
+        botTypingElement.innerHTML = `
+          <p>
+            <span class="typing-indicator">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </span>
+          </p>
+        `;
+        chatMessages.appendChild(botTypingElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Simulate bot response after 1.5 seconds
+        setTimeout(() => {
+          chatMessages.removeChild(botTypingElement);
+          
+          const botResponseElement = document.createElement('div');
+          botResponseElement.className = 'chat-message bot';
+          botResponseElement.innerHTML = `
+            <p>Puedo ayudarte con la tasación de tu vehículo, explicarte nuestro proceso de compra o resolver cualquier duda sobre la venta de tu coche.</p>
+            <div class="chat-message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+          `;
+          chatMessages.appendChild(botResponseElement);
+          
+          // Scroll to bottom
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1500);
+      }, 500);
+    }
+    
+    if (sendMessageBtn && chatInput) {
+      sendMessageBtn.addEventListener('click', sendMessage);
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+    }
+    
+    // Set current year in footer
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+      currentYearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Fade in elements on scroll
+    function fadeInOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    
+    // Initialize fade in
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+  </script>
+</body>
+</html>
+
